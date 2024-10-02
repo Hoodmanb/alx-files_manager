@@ -35,7 +35,6 @@ class RedisClient {
 
     async set(key, value, duration) {
         try {
-            // Convert value to string before storing in Redis
             await this.client.setEx(key, duration, String(value));
         } catch (err) {
             console.log(err);
